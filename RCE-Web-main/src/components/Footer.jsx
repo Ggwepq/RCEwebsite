@@ -74,7 +74,7 @@ function ContactColumn({ isMobile }) {
     <div style={{ textAlign: isMobile ? 'center' : 'left' }}>
       <p style={styles.columnHeading}>Contact</p>
       <p style={styles.mutedText}>
-        GRC Building, 454, 1400 Rizal Ave Ext,<br />Grace Park East, Caloocan,<br />Metro Manila, Philippines<br /><br />
+        454 GRC Building, Rizal Ave Ext,<br />Cor. 9th Avenue Grace Park,<br />Caloocan, City<br /><br />
         0999-999-9999<br />(63+) 900-000-0000<br /><br />
         <a href="mailto:rceassistextension0104@gmail.com" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'underline', wordBreak: 'break-all' }}>
           rceassistextension0104@gmail.com

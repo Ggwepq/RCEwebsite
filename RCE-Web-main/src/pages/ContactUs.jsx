@@ -14,7 +14,7 @@ const NOISE_TEXTURE = "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xml
 const INFO_CARDS = [
   {
     title: 'Head Office',
-    lines: ['GRC Building, 454, 1400 Rizal', 'Ave Ext, Grace Park East,', 'Caloocan, Metro Manila, Philippines'],
+    lines: ['454 GRC Building, Rizal Ave Ext, Cor. 9th Avenue Grace Park, Caloocan, City'],
     icon: (
       <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke={RED} strokeWidth="2">
         <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>

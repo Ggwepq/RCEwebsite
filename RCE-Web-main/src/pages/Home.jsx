@@ -515,11 +515,16 @@ export default function Home() {
               Let's Build the Future, <span style={{ color: '#FFCCD5' }}>Together.</span>
             </h2>
           </div>
+           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+            <h4 style={{ color: 'white', fontSize: 'clamp(2px, 4vw, 20px)', fontWeight: 90, lineHeight: 1, marginBottom: '5px' }}>
+              Let me know your, <span style={{ color: '#FFCCD5' }}>Concern!</span>
+            </h4>
+          </div>
 
           <div className="contact-inner" style={{ display: 'flex', gap: '56px', flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: '220px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
               <div>
-                <ContactInfo icon="📍" text="GRC Building, Caloocan, Philippines" />
+                <ContactInfo icon="📍" text={<>454 GRC Building, Rizal Ave Ext,<br />Cor. 9th Avenue Grace Park, Caloocan, City</>} />
                 <ContactInfo icon="📞" text="0999-999-9999" />
                 <ContactInfo icon="✉️" text="rceassistextension0104@gmail.com" />
               </div>
@@ -538,8 +543,13 @@ export default function Home() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <input style={styles.inputField} placeholder="Full Name" />
                 <input style={styles.inputField} placeholder="Student / Admin ID" />
-                <textarea style={{ ...styles.inputField, resize: 'none' }} placeholder="Inquiry about Roller Space System" rows={4} />
-                <button style={{ ...styles.btnDark, border: 'none', cursor: 'pointer', backgroundColor: '#6B0000', width: '100%', justifyContent: 'center' }}>Submit Query</button>
+                {/* UPDATED: Longer Textarea */}
+                <textarea 
+                   style={{ ...styles.inputField, resize: 'none', minHeight: '290px' }} 
+                   placeholder="Concern Comments" 
+                   rows={8} 
+                />
+                <button style={{ ...styles.btnDark, border: 'none', cursor: 'pointer', backgroundColor: '#6B0000', width: '100%', justifyContent: 'center' }}>Submit!</button>
               </div>
             </div>
           </div>
