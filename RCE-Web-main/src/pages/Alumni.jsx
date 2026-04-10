@@ -116,7 +116,6 @@ export default function Alumni() {
         .hero-heading  { animation: fadeUp 0.7s ease both; animation-delay: 0.25s; }
         .hero-divider  { animation: fadeUp 0.6s ease both; animation-delay: 0.42s; }
         .hero-body     { animation: fadeUp 0.6s ease both; animation-delay: 0.55s; }
-        .hero-cta      { animation: fadeUp 0.6s ease both; animation-delay: 0.68s; }
       `}</style>
 
       {/* ── HERO SECTION ── */}
@@ -201,41 +200,12 @@ export default function Alumni() {
             fontWeight: 400,
             lineHeight: 1.9,
             maxWidth: '460px',
-            margin: '0 0 44px 0',
+            margin: '0',
           }}>
             From your first steps as a student to your journey as a leader,
             we provide professional connections tailored to your growth.
           </p>
 
-          {/* CTA */}
-          <div className="hero-cta">
-            <a
-              href="#alumni-form"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
-                backgroundColor: GRC_RED,
-                color: 'white',
-                padding: '15px 34px',
-                borderRadius: '6px',
-                fontFamily: "'Poppins', sans-serif",
-                fontWeight: 700,
-                fontSize: '13px',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                textDecoration: 'none',
-                transition: 'opacity 0.2s ease',
-              }}
-              onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
-              onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-            >
-              Register Now
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
-          </div>
         </div>
       </section>
 

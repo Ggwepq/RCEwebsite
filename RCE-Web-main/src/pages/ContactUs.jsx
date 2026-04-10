@@ -7,10 +7,8 @@ import { useState } from 'react';
 const RED      = '#C8102E';
 const DARK_RED = '#8B0000';
 
-// Subtle grain texture used as a background overlay on colored sections
 const NOISE_TEXTURE = "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")";
 
-// Shown in the left column of the contact section
 const INFO_CARDS = [
   {
     title: 'Head Office',
@@ -53,14 +51,11 @@ const INFO_CARDS = [
   },
 ];
 
-// ── SOCIAL LINKS ──────────────────────────────────────────────────────────────
-// Replace each `url` value with your actual page/profile URL.
-// Links open in a new tab safely via target="_blank" + rel="noopener noreferrer".
 const SOCIALS = [
   {
     name: 'Facebook',
     handle: '@RCE',
-    url: 'https://www.facebook.com/GrcRCExtension',            // ← replace with your Facebook page URL
+    url: 'https://www.facebook.com/GrcRCExtension',
     color: '#1877F2',
     icon: (
       <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
@@ -71,7 +66,7 @@ const SOCIALS = [
   {
     name: 'Instagram',
     handle: '@RCE',
-    url: 'https://www.instagram.com/YOUR_HANDLE_HERE',         // ← replace with your Instagram profile URL
+    url: 'https://www.instagram.com/YOUR_HANDLE_HERE',
     gradient: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)',
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth="2">
@@ -84,7 +79,7 @@ const SOCIALS = [
   {
     name: 'TikTok',
     handle: '@RCE',
-    url: 'https://www.tiktok.com/@YOUR_HANDLE_HERE',           // ← replace with your TikTok profile URL
+    url: 'https://www.tiktok.com/@YOUR_HANDLE_HERE',
     color: '#010101',
     icon: (
       <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
@@ -95,7 +90,7 @@ const SOCIALS = [
   {
     name: 'LinkedIn',
     handle: '@RCE',
-    url: 'https://www.linkedin.com/company/YOUR_COMPANY_HERE', // ← replace with your LinkedIn page URL
+    url: 'https://www.linkedin.com/company/YOUR_COMPANY_HERE',
     color: '#0A66C2',
     icon: (
       <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
@@ -105,10 +100,6 @@ const SOCIALS = [
     ),
   },
 ];
-
-// ─────────────────────────────────────────────────────────────────────────────
-// SHARED STYLES
-// ─────────────────────────────────────────────────────────────────────────────
 
 const INPUT_STYLE = {
   width: '100%',
@@ -123,10 +114,6 @@ const INPUT_STYLE = {
   boxSizing: 'border-box',
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
-// GLOBAL CSS
-// ─────────────────────────────────────────────────────────────────────────────
-
 const GLOBAL_CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
   *, *::before, *::after { box-sizing: border-box; }
@@ -139,7 +126,6 @@ const GLOBAL_CSS = `
   .hero-heading { animation: fadeUp 0.7s ease both; animation-delay: 0.25s; }
   .hero-divider { animation: fadeUp 0.6s ease both; animation-delay: 0.42s; }
   .hero-body    { animation: fadeUp 0.6s ease both; animation-delay: 0.55s; }
-  .hero-cta     { animation: fadeUp 0.6s ease both; animation-delay: 0.68s; }
   .hero-image   { animation: fadeUp 0.8s ease both; animation-delay: 0.30s; }
 
   @media (max-width: 900px) {
@@ -179,12 +165,6 @@ function InfoCard({ card }) {
   );
 }
 
-/**
- * Social media button.
- * - href={social.url}         → links to the real page
- * - target="_blank"           → opens in a new browser tab
- * - rel="noopener noreferrer" → security best practice for external links
- */
 function SocialCard({ social }) {
   return (
     <a
@@ -207,8 +187,8 @@ function SocialCard({ social }) {
       <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: social.gradient || social.color, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
         {social.icon}
       </div>
-      <p style={{ color: 'white',                 fontWeight: 700, fontSize: '13px', margin: 0 }}>{social.name}</p>
-      <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '11px',                 margin: 0 }}>{social.handle}</p>
+      <p style={{ color: 'white', fontWeight: 700, fontSize: '13px', margin: 0 }}>{social.name}</p>
+      <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '11px', margin: 0 }}>{social.handle}</p>
     </a>
   );
 }
@@ -237,20 +217,9 @@ function HeroSection() {
             <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'white', flexShrink: 0 }} />
             <span style={{ flex: 1, height: '1px', backgroundColor: 'rgba(255,255,255,0.25)' }} />
           </div>
-          <p className="hero-body" style={{ color: 'rgba(255,255,255,0.82)', fontSize: '15px', lineHeight: 1.9, maxWidth: '440px', margin: '0 0 36px 0' }}>
+          <p className="hero-body" style={{ color: 'rgba(255,255,255,0.82)', fontSize: '15px', lineHeight: 1.9, maxWidth: '440px', margin: 0 }}>
             From protecting your career goals to empowering the next generation of professionals — a dedicated network of alumni offering career guidance and lifelong support.
           </p>
-          <div className="hero-cta">
-            <a href="#contact-form" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', backgroundColor: DARK_RED, color: 'white', padding: '15px 34px', borderRadius: '6px', fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none', transition: 'opacity 0.2s ease', boxShadow: '0 4px 20px rgba(0,0,0,0.35)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-            >
-              Get in Touch
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
-          </div>
         </div>
 
         <div className="hero-image" style={{ flexShrink: 0 }}>
@@ -281,9 +250,9 @@ function ContactSection({ fields, onFieldChange, onSubmit }) {
           <div style={{ backgroundColor: '#FDECEA', borderRadius: '10px', padding: '28px', border: '1px solid rgba(200,16,46,0.08)' }}>
             <p style={{ color: '#555', fontSize: '13px', marginBottom: '16px', fontWeight: 500 }}>Send Us a Message</p>
             <form onSubmit={onSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <input name="name"    placeholder="Name:"    value={fields.name}    onChange={onFieldChange} style={INPUT_STYLE} />
-              <input name="email"   placeholder="Email:"   value={fields.email}   onChange={onFieldChange} style={INPUT_STYLE} type="email" />
-              <input name="contact" placeholder="Contact:" value={fields.contact} onChange={onFieldChange} style={INPUT_STYLE} />
+              <input name="name"     placeholder="Name:"    value={fields.name}    onChange={onFieldChange} style={INPUT_STYLE} />
+              <input name="email"    placeholder="Email:"   value={fields.email}   onChange={onFieldChange} style={INPUT_STYLE} type="email" />
+              <input name="contact"  placeholder="Contact:" value={fields.contact} onChange={onFieldChange} style={INPUT_STYLE} />
               <textarea name="message" placeholder="Message:" value={fields.message} onChange={onFieldChange} rows={7} style={{ ...INPUT_STYLE, resize: 'none' }} />
               <button type="submit" style={{ backgroundColor: RED, color: 'white', border: 'none', padding: '15px', fontWeight: 700, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', borderRadius: '4px', cursor: 'pointer', fontFamily: "'Poppins', sans-serif" }}>
                 Send Message

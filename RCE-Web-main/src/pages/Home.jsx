@@ -53,9 +53,6 @@ const styles = {
   },
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
-// RESPONSIVE HOOK
-// ─────────────────────────────────────────────────────────────────────────────
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(
     typeof window !== 'undefined' ? window.innerWidth < breakpoint : false
@@ -68,15 +65,12 @@ function useIsMobile(breakpoint = 768) {
   return isMobile;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// UPDATED INFORMATION CARDS DATA (Integrated Roller Space Logic)
-// ─────────────────────────────────────────────────────────────────────────────
 const INFO_CARDS = [
   {
     id: 1,
     tag: "Case Study",
     title: "Roller Space: Modernizing Operations",
-    body: "Addressing the challenges of manual operation at Roller Space in Metro Manila. Our integrated web-based system transitions manual tracking into a streamlined digital experience, solving time-consuming data retrieval and inventory lag.",
+    body: "An RCE initiative addressing the challenges of manual operation at Roller Space. Our integrated web-based system transitions manual tracking into a streamlined digital experience, solving time-consuming data retrieval for the community.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="17" cy="17" r="9" stroke="currentColor" strokeWidth="2.5"/>
@@ -90,9 +84,9 @@ const INFO_CARDS = [
   },
   {
     id: 2,
-    tag: "System Logic",
-    title: "Automated Rental & Inventory",
-    body: "No more manual logbooks. The new system provides real-time monitoring for skating equipment rentals. From stock availability to automated return notifications, we reduce human error and improve customer flow.",
+    tag: "Social Impact",
+    title: "Community Growth through Tech",
+    body: "Beyond code, we aim for sustainable local growth. By automating inventory and rentals, we empower local skating hubs to serve more citizens safely, fostering a more vibrant recreational community in Metro Manila.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <path d="M20 8c-6.627 0-12 5.373-12 12 0 4.418 2.386 8.279 5.928 10.374" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
@@ -102,14 +96,14 @@ const INFO_CARDS = [
       </svg>
     ),
     accent: "#b91c1c",
-    stat: "Real-Time",
-    statLabel: "Inventory Sync",
+    stat: "High",
+    statLabel: "Social Impact",
   },
   {
     id: 3,
-    tag: "Impact",
-    title: "Solving Manual Inefficiencies",
-    body: "By automating Roller Space's inventory management, we eliminate the 'manual operation dilemma.' Staff can now focus on customer safety and rink management while the system handles the heavy data lifting.",
+    tag: "Service",
+    title: "The Extension Mission",
+    body: "Extension means bringing academic expertise to the doorstep of the people. RCE ensures that IT students use their skills to solve tangible paper-dependency issues, creating zero-paper environments for local enterprises.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <path d="M12 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
@@ -119,14 +113,14 @@ const INFO_CARDS = [
       </svg>
     ),
     accent: "#991b1b",
-    stat: "Zero",
-    statLabel: "Paper Dependencies",
+    stat: "Direct",
+    statLabel: "Community Outreach",
   },
   {
     id: 4,
-    tag: "Methodology",
-    title: "Research-Driven Solutions",
-    body: "Utilizing a systematic data gathering procedure, Chapter 3 of our development plan ensures the software architecture meets the high-traffic demands of the Metro Manila skating community.",
+    tag: "Research",
+    title: "Evidence-Based Solutions",
+    body: "Every implementation is backed by a systematic data gathering procedure. Our research framework ensures that software architecture meets the high-traffic demands of the Metro Manila community effectively.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <path d="M20 6v4M20 30v4M6 20h4M30 20h4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
@@ -136,13 +130,10 @@ const INFO_CARDS = [
     ),
     accent: "#7f1d1d",
     stat: "CH3",
-    statLabel: "Proven Framework",
+    statLabel: "Research Framework",
   },
 ];
 
-// ─────────────────────────────────────────────────────────────────────────────
-// NAV BUTTON
-// ─────────────────────────────────────────────────────────────────────────────
 function NavBtn({ onClick, children, dark = false }) {
   const [hov, setHov] = useState(false);
   return (
@@ -167,9 +158,6 @@ function NavBtn({ onClick, children, dark = false }) {
   );
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// INFORMATION CAROUSEL
-// ─────────────────────────────────────────────────────────────────────────────
 function InfoCarousel() {
   const [active, setActive] = useState(0);
   const [dir, setDir] = useState('left');
@@ -236,7 +224,6 @@ function InfoCarousel() {
         minHeight: isMobile ? 'auto' : 420,
         border: '1px solid rgba(200,16,46,0.07)',
       }}>
-        {/* Accent panel */}
         <div
           className={`ic-panel ${animating ? (dir === 'left' ? 'ic-out-l' : 'ic-out-r') : (dir === 'left' ? 'ic-in-l' : 'ic-in-r')}`}
           style={{
@@ -274,7 +261,6 @@ function InfoCarousel() {
           </div>
         </div>
 
-        {/* Content panel */}
         <div
           className={`ic-panel ${animating ? (dir === 'left' ? 'ic-out-l' : 'ic-out-r') : (dir === 'left' ? 'ic-in-l' : 'ic-in-r')}`}
           style={{
@@ -286,7 +272,6 @@ function InfoCarousel() {
             background: '#fff',
           }}
         >
-          {/* Progress bar */}
           <div style={{ display: 'flex', gap: 6, marginBottom: isMobile ? 24 : 44 }}>
             {INFO_CARDS.map((_, i) => (
               <div key={i} onClick={() => goTo(i)} style={{
@@ -346,9 +331,6 @@ function InfoCarousel() {
   );
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// MAIN PAGE
-// ─────────────────────────────────────────────────────────────────────────────
 export default function Home() {
   const isMobile = useIsMobile();
 
@@ -425,11 +407,11 @@ export default function Home() {
           <div className="hero-text" style={{ flex: 1, minWidth: '280px', maxWidth: '580px' }}>
             <div className="hero-eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
               <span style={{ display: 'block', width: '40px', height: '2px', backgroundColor: 'rgba(255,255,255,0.5)' }} />
-              <span style={{ color: 'rgba(255,255,255,0.65)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase' }}>Integrated Systems Project</span>
+              <span style={{ color: 'rgba(255,255,255,0.65)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase' }}>Building Community Resilience</span>
             </div>
 
             <h1 className="hero-heading" style={{ fontFamily: "'Times New Roman', Times, serif", color: 'white', fontSize: 'clamp(34px, 5vw, 66px)', fontWeight: 900, lineHeight: 1.08, letterSpacing: '-0.01em', margin: '0' }}>
-              Roller Space <span style={{ fontStyle: 'italic' }}>Rental</span><br />& Inventory
+              Research and <span style={{ fontStyle: 'italic' }}>Community</span><br />Extension
             </h1>
 
             <div className="hero-divider hero-divider-wrap" style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '32px 0', maxWidth: '340px' }}>
@@ -439,12 +421,12 @@ export default function Home() {
             </div>
 
             <p className="hero-body" style={{ color: 'rgba(255,255,255,0.82)', fontSize: '15px', fontWeight: 400, lineHeight: 1.9, maxWidth: '440px', margin: '0 0 44px 0' }}>
-              Solving manual operation challenges for Metro Manila's skating community. High-performance inventory tracking and automated rental management.
+              Empowering society through purposeful research and dedicated service. We bridge the gap between academic theory and community action, turning innovation into lasting impact.
             </p>
 
             <div className="hero-cta">
               <Link to="/contact" style={styles.btnDark} onMouseEnter={e => e.currentTarget.style.opacity = '0.85'} onMouseLeave={e => e.currentTarget.style.opacity = '1'}>
-                View Dashboard
+                ENROLL NOW!
                 <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -463,9 +445,9 @@ export default function Home() {
         <div style={styles.sectionMax}>
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 52, flexWrap: 'wrap', gap: 16 }}>
             <div>
-              <span style={{ display: 'block', color: GRC_RED, fontSize: 11, fontWeight: 700, letterSpacing: '0.26em', textTransform: 'uppercase', marginBottom: 12 }}>System Features</span>
+              <span style={{ display: 'block', color: GRC_RED, fontSize: 11, fontWeight: 700, letterSpacing: '0.26em', textTransform: 'uppercase', marginBottom: 12 }}>RCE Initiatives</span>
               <h2 style={{ fontFamily: "'Times New Roman', serif", fontWeight: 900, fontSize: 'clamp(24px, 3.5vw, 44px)', color: '#111', margin: 0, lineHeight: 1.1 }}>
-                Solving Manual <span style={{ color: GRC_RED, fontStyle: 'italic' }}>Operations</span>
+                Innovation for the <span style={{ color: GRC_RED, fontStyle: 'italic' }}>Greater Good</span>
               </h2>
             </div>
           </div>
@@ -482,18 +464,18 @@ export default function Home() {
           </div>
 
           <div style={{ flex: 1, minWidth: '260px' }}>
-            <p style={{ color: GRC_RED, fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '16px' }}>Project Background</p>
+            <p style={{ color: GRC_RED, fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '16px' }}>Our Mission</p>
             <h2 style={{ fontSize: 'clamp(26px, 4vw, 48px)', fontWeight: 900, color: '#111', lineHeight: 1.15, marginBottom: '25px' }}>
-              Modernizing <span style={{ color: GRC_RED }}>Roller Space,</span><br />Empowering <span style={{ color: GRC_RED }}>Efficiency.</span>
+              Advancing <span style={{ color: GRC_RED }}>Knowledge,</span><br />Serving the <span style={{ color: GRC_RED }}>Community.</span>
             </h2>
             <p style={{ color: '#555', fontSize: '16px', lineHeight: 1.8, maxWidth: '520px', marginBottom: '32px' }}>
-              Our study focuses on the transition from manual logs to a robust web-based system. This project eliminates data redundancy and speeds up the equipment rental process.
+              The Research and Community Extension (RCE) office is dedicated to fostering a culture of technical excellence and civic duty. By supporting projects like the Roller Space Integrated System, we prove that digital modernization can enhance both business efficiency and quality of life.
             </p>
             <div className="stat-row" style={{ display: 'flex', alignItems: 'center', gap: '24px', marginBottom: '36px', flexWrap: 'wrap' }}>
               {[
-                { val: 'Faster', label: 'Service Speed' },
-                { val: '100%', label: 'Data Accuracy' },
-                { val: 'Active', label: 'Monitoring' },
+                { val: 'Active', label: 'Research Projects' },
+                { val: '100%', label: 'Commitment' },
+                { val: 'Local', label: 'Partnerships' },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p style={{ fontSize: '30px', fontWeight: 900, color: '#111', lineHeight: 1 }}>{stat.val}</p>
@@ -501,7 +483,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <Link to="/about" style={{ ...styles.btnDark, backgroundColor: GRC_RED, boxShadow: 'none' }}>Project Details</Link>
+            <Link to="/about" style={{ ...styles.btnDark, backgroundColor: GRC_RED, boxShadow: 'none' }}>Extension Details</Link>
           </div>
         </div>
       </section>
@@ -512,24 +494,23 @@ export default function Home() {
         <div style={{ ...styles.sectionMax, position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <h2 style={{ color: 'white', fontSize: 'clamp(22px, 4vw, 46px)', fontWeight: 900, lineHeight: 1.2, marginBottom: '14px' }}>
-              Let's Build the Future, <span style={{ color: '#FFCCD5' }}>Together.</span>
+              Partner with <span style={{ color: '#FFCCD5' }}>RCE Today.</span>
             </h2>
           </div>
            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <h4 style={{ color: 'white', fontSize: 'clamp(2px, 4vw, 20px)', fontWeight: 90, lineHeight: 1, marginBottom: '5px' }}>
-              Let me know your, <span style={{ color: '#FFCCD5' }}>Concern!</span>
+            <h4 style={{ color: 'white', fontSize: 'clamp(14px, 2vw, 20px)', fontWeight: 400, lineHeight: 1.5, marginBottom: '5px' }}>
+              Submit your Formal Concern or <span style={{ color: '#FFCCD5' }}>Proposals.</span>
             </h4>
           </div>
 
           <div className="contact-inner" style={{ display: 'flex', gap: '56px', flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: '220px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
               <div>
-                <ContactInfo icon="📍" text={<>454 GRC Building, Rizal Ave Ext,<br />Cor. 9th Avenue Grace Park, Caloocan, City</>} />
+                <ContactInfo icon="📍" text={<>454 GRC Building, Rizal Ave Ext,<br />Cor. 9th Avenue Grace Park, Caloocan City</>} />
                 <ContactInfo icon="📞" text="0999-999-9999" />
                 <ContactInfo icon="✉️" text="rceassistextension0104@gmail.com" />
               </div>
               <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '24px' }}>
-                <p style={{ color: 'white', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '16px', letterSpacing: '0.1em' }}></p>
                 <div style={{ display: 'flex', gap: '20px' }}>
                   <a href="https://www.facebook.com/GrcRCExtension" target="_blank" rel="noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="FB" style={styles.socialIcon} className="social-icon" /></a>
                   <a href="#" target="_blank" rel="noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="IG" style={styles.socialIcon} className="social-icon" /></a>
@@ -542,11 +523,10 @@ export default function Home() {
             <div style={{ flex: 1.3, minWidth: '260px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <input style={styles.inputField} placeholder="Full Name" />
-                <input style={styles.inputField} placeholder="Student / Admin ID" />
-                {/* UPDATED: Longer Textarea */}
+                <input style={styles.inputField} placeholder="Student No." />
                 <textarea 
                    style={{ ...styles.inputField, resize: 'none', minHeight: '290px' }} 
-                   placeholder="Concern Comments" 
+                   placeholder="Message Concern." 
                    rows={8} 
                 />
                 <button style={{ ...styles.btnDark, border: 'none', cursor: 'pointer', backgroundColor: '#6B0000', width: '100%', justifyContent: 'center' }}>Submit!</button>
@@ -556,11 +536,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── MAP FOOTER ── */}
       <div style={{ width: '100%', height: '380px' }}>
         <iframe
           title="GRC Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.5!2d120.9813!3d14.6507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1234567890a%3A0x1234567890abcdef!2sGlobal%20Reciprocal%20Colleges!5e0!3m2!1sen!2sph!4v1234567890"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.0381446726484!2d120.98565577584898!3d14.653737575775434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b5f79986b629%3A0xc6e4c7003009026!2sGlobal%20Reciprocal%20Colleges!5e0!3m2!1sen!2sph!4v1712750000000!5m2!1sen!2sph"
           style={{ width: '100%', height: '100%', border: 'none' }}
           loading="lazy"
         />
